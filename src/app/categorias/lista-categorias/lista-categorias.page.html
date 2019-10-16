@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title selfie> Categorias </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-list >
+      <ion-row>
+          <ion-item *ngFor="let categoria of categorias | async">
+          <ion-col >
+              <!-- <ion-label text-wrap> -->
+                <!-- <h2>{{ categoria.nome }}</h2> -->
+              <!-- </ion-label> -->
+              <ion-avatar slot="start">
+                <img [src]="categoria.img" />
+              </ion-avatar> 
+          </ion-col>
+        </ion-item>
+          <ion-col>
+            
+          </ion-col>
+          <ion-col >
+            
+          </ion-col>
+        </ion-row>
+  
+</ion-list>
+
+</ion-content>
