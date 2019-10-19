@@ -1,3 +1,4 @@
+import { ProdutoService } from './../../produtos/shared/produto.service';
 import { CategoriaService } from './../shared/categoria.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -12,15 +13,16 @@ export class ListaCategoriasPage implements OnInit {
   categorias: Observable<any[]>;
 
   constructor(private router: Router,
-              private categoriaService: CategoriaService) { }
+              private categoriaService: CategoriaService,
+              private produtoService: ProdutoService) { }
 
 
   ngOnInit() {
     this.categorias = this.categoriaService.getcategoriasAll(null);
   }
 
-  /*getProdutos(categoriaKey: string){
-    this.router.navigate(['pedido/carrinho/novo-item/', categoriaKey]);
-  }*/
+  getProduto(categoria: string){
+    this.router.navigate(['produtos/lista-produtos/', categoria]);
+  }
 
 }

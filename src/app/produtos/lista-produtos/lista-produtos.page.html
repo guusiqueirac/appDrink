@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar color="black" >
+      <ion-title selfie color="mostarda"> appDrink </ion-title>
+    </ion-toolbar>
+    <ion-toolbar color="medium">
+      <ion-title> {{ categoria }} </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let p of produto | async" (click)="adicionarProduto(produto.key)">
+        <ion-avatar slot="start" *ngIf="p.img">
+          <img [src]="p.img" />
+        </ion-avatar>
+        <ion-label text-wrap>
+          <h1>{{ p.nome }}</h1>
+          <h2>{{ p.categoriaNome }}</h2>
+          <pre text-wrap>{{ p.descricao }}</pre>
+          <!-- <span>{{produto.preco | currency: 'BRL'}}</span> -->
+          <app-valor [valor]="p.preco"></app-valor>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+</ion-content>

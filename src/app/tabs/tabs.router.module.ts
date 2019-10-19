@@ -44,6 +44,15 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'produtos',
+    children: [
+      {
+        path: 'lista-produtos/:key',
+        loadChildren: '../produtos/lista-produtos/lista-produtos.module#ListaProdutosPageModule'
+      }
+      ]
+    },
+  {
     path: '',
     redirectTo: '/tabs/categoria',
     pathMatch: 'full'
