@@ -1,3 +1,4 @@
+import { CategoriaService } from 'src/app/categorias/shared/categoria.service';
 import { ProdutoService } from './../shared/produto.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -9,30 +10,33 @@ import { Observable } from 'rxjs';
   styleUrls: ['./lista-produtos.page.scss'],
 })
 export class ListaProdutosPage implements OnInit {
-  produto: Observable<any[]>;
+  produtos: Observable<any[]>;
   categorias: Observable<any[]>;
   categoriaSelecionada: string;
   carrinhoPossuiItens: boolean = false;
   categoria: string;
-  
+  key: string;
+
   constructor(private router: Router,
               private produtosService: ProdutoService,
+              private categoriaService: CategoriaService,
               private route: ActivatedRoute ) { }
 
   ngOnInit() {
+    // this.produtos = this.produtosService.getAll(null);
     let key = this.route.snapshot.paramMap.get('key');
+
     if (key) {
-      const subscribe = this.produtosService.getByKey(key).subscribe ( (produtos: any ) => {
-        subscribe.unsubscribe();
-        this.produto = produtos;
-        this.categoria = produtos[0].categoriaNome;
-      })
-    }  
-  }
+      this.categorias = this.categoriaService.getcategoriasAll(key);
+
+      this.produtos = this.produtosService.getByKey(key);
+      console.log(this.produtos);
+    }
+    }
 
     /*Buscar produto de uma categoria através de uma key*/
-    /*buscarProdutos() {
-      this.produtos = this.produtosService.getAll(this.categoriaSelecionada);
-    }*/
+    buscarProdutos() {
+       this.produtos = this.produtosService.getAll(this.categoriaSelecionada);
+     }
 
 }

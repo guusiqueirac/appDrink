@@ -31,7 +31,7 @@ export class ProdutoService {
     return this.db.list ( FirebasePath.PRODUTOS, q => {
       if (key) {
         return q.orderByChild('categoriaKey').equalTo(key);
-      } 
+      }
     }).snapshotChanges().pipe(
       map(changes => {
         return changes.map(m => ({key: m.payload.key, ...m.payload.val() }));

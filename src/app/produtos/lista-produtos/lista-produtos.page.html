@@ -8,14 +8,14 @@
   </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let p of produto | async" (click)="adicionarProduto(produto.key)">
+  <ion-list >
+    <ion-item *ngFor="let p of produtos | async" (click)="buscarProdutos(p.key)">
         <ion-avatar slot="start" *ngIf="p.img">
           <img [src]="p.img" />
         </ion-avatar>
         <ion-label text-wrap>
           <h1>{{ p.nome }}</h1>
-          <h2>{{ p.categoriaNome }}</h2>
+          <!-- <h2>{{ p.categoriaNome }}</h2> -->
           <pre text-wrap>{{ p.descricao }}</pre>
           <!-- <span>{{produto.preco | currency: 'BRL'}}</span> -->
           <app-valor [valor]="p.preco"></app-valor>

@@ -9,24 +9,25 @@
 
 <ion-content padding>
 
-<ion-list no-list>
+<ion-grid no-list>
   <ion-row>
       <ion-item *ngFor="let categoria of categorias | async" (click)="getProduto(categoria.key)">
-      <ion-col size-md="3" offset-md="3">
+      <ion-col size-md="4">
+        <div>
         <h3>{{categoria.nome}}</h3>
           <ion-avatar class="">
             <ion-img [src]="categoria.img"></ion-img>
-          </ion-avatar>  
+          </ion-avatar> 
+        </div> 
       </ion-col>
-    </ion-item>
-          <ion-col>
-            
-          </ion-col>
-          <ion-col >
-            
-          </ion-col>
+      </ion-item>
+      <ion-col>
+
+      </ion-col>
+      <ion-col>
+
+      </ion-col>
   </ion-row>
-  
-</ion-list>
+</ion-grid>
 
 </ion-content>
