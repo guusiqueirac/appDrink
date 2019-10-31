@@ -49,6 +49,10 @@ const routes: Routes = [
       {
         path: 'lista-produtos/:key',
         loadChildren: '../produtos/lista-produtos/lista-produtos.module#ListaProdutosPageModule'
+      },
+      {
+        path: 'item-produto/:key',
+        loadChildren: '../produtos/item-produto/item-produto.module#ItemProdutoPageModule'
       }
       ]
     },

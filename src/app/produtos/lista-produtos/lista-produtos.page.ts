@@ -39,4 +39,8 @@ export class ListaProdutosPage implements OnInit {
        this.produtos = this.produtosService.getAll(this.categoriaSelecionada);
      }
 
+     adicionarProduto(key: string){
+      this.router.navigate(['produtos/item-produto/', key]);
+    }
+
 }

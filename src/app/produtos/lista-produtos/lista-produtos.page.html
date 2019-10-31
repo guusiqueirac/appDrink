@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-list >
-    <ion-item *ngFor="let p of produtos | async" (click)="buscarProdutos(p.key)">
+    <ion-item *ngFor="let p of produtos | async" (click)="adicionarProduto(p.key)">
         <ion-avatar slot="start" *ngIf="p.img">
           <img [src]="p.img" />
         </ion-avatar>
