@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { ToastService } from 'src/app/core/shared/toast.service';
 import { ProdutoService } from 'src/app/produtos/shared/produto.service';
 import { CarrinhoService } from 'src/app/pedido/carrinho.service';
+import { TabsPage } from 'src/app/tabs/tabs.page';
 
 @Component({
   selector: 'app-item-produto',
@@ -14,6 +15,9 @@ export class ItemProdutoPage implements OnInit {
   produto: any = {};
   form: FormGroup;
   total: number = 0;
+  /*variável para receber a imagem*/
+  produtoImg: string;
+
 
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
@@ -26,9 +30,12 @@ export class ItemProdutoPage implements OnInit {
     this.criarFormulario();
     let key = this.route.snapshot.paramMap.get('key');
     if (key) {
-      const subscribe = this.produtosService.getByKey(key).subscribe( (produto: any ) => {
+      const subscribe = this.produtosService.getProduto(key).subscribe( (produto: any ) => {
         subscribe.unsubscribe();
         this.produto = produto;
+
+        /*produtoImg é uma variavel que foi criada para recebeber as informações da variavel 'produto' e informando o caminho do banco*/
+        this.produtoImg = produto.img;
 
         this.form.patchValue({
           produtoKey: produto.key,
@@ -36,7 +43,7 @@ export class ItemProdutoPage implements OnInit {
           produtoDescricao: produto.descricao,
           produtoPreco: produto.preco,
           quantidade: 1
-        })
+        });
 
         /*Mostra o total calculado*/
         this.executaCalcularTotal();

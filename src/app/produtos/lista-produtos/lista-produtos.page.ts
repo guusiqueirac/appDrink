@@ -29,7 +29,7 @@ export class ListaProdutosPage implements OnInit {
     if (key) {
       this.categorias = this.categoriaService.getcategoriasAll(key);
 
-      this.produtos = this.produtosService.getByKey(key);
+      this.produtos = this.produtosService.getByCategoria(key);
       console.log(this.produtos);
     }
     }

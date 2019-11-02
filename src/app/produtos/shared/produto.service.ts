@@ -26,7 +26,7 @@ export class ProdutoService {
     )
   }
 
-  getByKey(key: string){
+  getByCategoria(key: string){
     /*Contrução do path, o $ serve para concatenar as variaveis com constante*/
     return this.db.list ( FirebasePath.PRODUTOS, q => {
       if (key) {
@@ -37,6 +37,15 @@ export class ProdutoService {
         return changes.map(m => ({key: m.payload.key, ...m.payload.val() }));
       })
     )
+  }
+  getProduto(key: string){
+    /*Contrução do path, o $ serve para concatenar as variaveis com constante*/
+    const path = `${FirebasePath.PRODUTOS}${key}`;
+    return this.db.object(path).snapshotChanges().pipe(
+      map(change => {
+        return ({ key: change.key, ...change.payload.val() });
+      })
+    );
   }
 
 

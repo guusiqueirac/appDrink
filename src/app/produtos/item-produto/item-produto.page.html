@@ -1,13 +1,14 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title><!--{{ categoria }}--></ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="black" >
+      <ion-title selfie color="mostarda"> appDrink </ion-title>
+    </ion-toolbar>
+    <ion-toolbar color="medium">
+      <ion-title> {{ produto.categoriaNome }} </ion-title>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-content padding>
+        <img class="img" [src]="produtoImg" />
   <h1>{{ produto.nome }}</h1>
   <pre text-wrap>{{ produto.descricao }}</pre>
   <app-valor [valor]="produto.preco"></app-valor>
@@ -52,3 +53,4 @@
     </div>
   </form>
 </ion-content>
+<ion-tabs></ion-tabs>
