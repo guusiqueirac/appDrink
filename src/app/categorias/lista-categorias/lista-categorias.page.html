@@ -9,9 +9,9 @@
 
 <ion-content padding>
 
-<ion-grid no-list>
+<ion-grid>
   <ion-row>
-        <ion-item *ngFor="let categoria of categorias | async" (click)="getProduto(categoria.key)">
+    <ion-item no-list *ngFor="let categoria of categorias | async" (click)="getProduto(categoria.key)">
       <ion-col size-md="4">
         <div>
         <h3>{{categoria.nome}}</h3>
@@ -19,13 +19,6 @@
             <ion-img [src]="categoria.img"></ion-img>
           </ion-avatar> 
         </div> 
-      </ion-col>
-     
-      <ion-col>
-
-      </ion-col>
-      <ion-col>
-
       </ion-col>
     </ion-item>
   </ion-row>

@@ -4,7 +4,6 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { ToastService } from 'src/app/core/shared/toast.service';
 import { ProdutoService } from 'src/app/produtos/shared/produto.service';
 import { CarrinhoService } from 'src/app/pedido/carrinho.service';
-import { TabsPage } from 'src/app/tabs/tabs.page';
 
 @Component({
   selector: 'app-item-produto',

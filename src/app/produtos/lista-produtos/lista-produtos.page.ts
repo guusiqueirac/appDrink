@@ -32,7 +32,7 @@ export class ListaProdutosPage implements OnInit {
       this.produtos = this.produtosService.getByCategoria(key);
       console.log(this.produtos);
     }
-    }
+  }
 
     /*Buscar produto de uma categoria através de uma key*/
     buscarProdutos() {

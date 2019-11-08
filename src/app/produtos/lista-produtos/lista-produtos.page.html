@@ -10,15 +10,16 @@
 <ion-content>
   <ion-list >
     <ion-item *ngFor="let p of produtos | async" (click)="adicionarProduto(p.key)">
-        <ion-avatar slot="start" *ngIf="p.img">
+        <ion-thumbnail slot="start" *ngIf="p.img">
           <img [src]="p.img" />
-        </ion-avatar>
+        </ion-thumbnail>
         <ion-label text-wrap>
           <h1>{{ p.nome }}</h1>
+          <br>
           <!-- <h2>{{ p.categoriaNome }}</h2> -->
-          <pre text-wrap>{{ p.descricao }}</pre>
+          <!-- <pre text-wrap>{{ p.descricao }}</pre> -->
           <!-- <span>{{produto.preco | currency: 'BRL'}}</span> -->
-          <app-valor [valor]="p.preco"></app-valor>
+          <p class="valor"><app-valor [valor]="p.preco"></app-valor></p>
         </ion-label>
       </ion-item>
     </ion-list>
