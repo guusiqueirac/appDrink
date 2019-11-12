@@ -47,10 +47,8 @@ export class CarrinhoService {
   /*Remove um produto do carrinho através de sua key*/
   remove(key: string) {
     return this.getCarrinhoProdutosRef().remove(key);
-    if (this.getCarrinhoProdutosRef().snapshotChanges.length === 0) {
-      this.router.navigate(['/tabs/produtos']);
     }
-  }
+
 
   /* Traz tudo que está no carrinho */
   getAll() {
@@ -60,6 +58,7 @@ export class CarrinhoService {
       })
     );
   }
+
   /* */
   getTotalPedido() {
     return this.getCarrinhoProdutosRef().snapshotChanges().pipe(
