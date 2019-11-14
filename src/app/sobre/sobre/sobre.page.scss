@@ -1,0 +1,37 @@
+:root {
+    --ion-safe-area-top: 20px;
+    --ion-safe-area-bottom: 22px;
+  }
+  .swiper-slide {
+    display: block;
+  }
+  ion-slide > h2 {
+    margin-top: 2.8rem;
+  }
+  ion-slide > img {
+    max-height: 50%;
+    max-width: 60%;
+    margin: 36px 0;
+  }
+
+  .ion-color-black {
+    --ion-color-base: var(--ion-color-black);
+    --ion-color-base-rgb: var(--ion-color-black-rgb);
+    --ion-color-contrast: var(--ion-color-black-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-black-contrast-rgb);
+    --ion-color-shade: var(--ion-color-black-shade);
+    --ion-color-tint: var(--ion-color-black-tint);
+  }
+
+  .ion-color-mostarda {
+    --ion-color-base: var(--ion-color-mostarda);
+    --ion-color-base-rgb: var(--ion-color-mostarda-rgb);
+    --ion-color-contrast: var(--ion-color-mostarda-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-mostarda-contrast-rgb);
+    --ion-color-shade: var(--ion-color-mostarda-shade);
+    --ion-color-tint: var(--ion-color-mostarda-tint);
+  }
+
+  .img {
+      max-width: 1000px;
+  }

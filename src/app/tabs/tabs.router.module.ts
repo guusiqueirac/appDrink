@@ -27,12 +27,11 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab3',
+        path: 'perfil',
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+            loadChildren: '../usuarios/perfil/perfil.module#PerfilPageModule'
           }
         ]
       },
@@ -54,6 +53,15 @@ const routes: Routes = [
         path: 'item-produto/:key',
         loadChildren: '../produtos/item-produto/item-produto.module#ItemProdutoPageModule'
       }
+      ]
+    },
+    {
+      path: 'sobre',
+      children: [
+        {
+          path: '',
+          loadChildren: '../sobre/sobre/sobre.module#SobrePageModule'
+        }
       ]
     },
   {

@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'esqueci-senha', loadChildren: './usuarios/esqueci-senha/esqueci-senha.module#EsqueciSenhaPageModule' },
   { path: 'item-produto', loadChildren: './produtos/item-produto/item-produto.module#ItemProdutoPageModule' },
   { path: 'item-carrinho', loadChildren: './pedido/item-carrinho/item-carrinho.module#ItemCarrinhoPageModule' },
+  { path: 'sobre', loadChildren: './sobre/sobre/sobre.module#SobrePageModule' },
 
 ];
 @NgModule({
