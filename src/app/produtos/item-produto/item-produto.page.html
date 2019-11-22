@@ -3,6 +3,9 @@
       <ion-title selfie color="mostarda"> appDrink </ion-title>
     </ion-toolbar>
     <ion-toolbar color="medium">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
       <ion-title> {{ produto.categoriaNome }} </ion-title>
     </ion-toolbar>
   </ion-header>
@@ -54,7 +57,7 @@
       </ion-item>
   
       <div margin-vertical>
-          <ion-button fill="outline" color="mostarda" expand="block" type="submit">Adicionar ao carrinho</ion-button>
+          <ion-button expand="full" fill="outline" color="mostarda" type="submit">Adicionar ao carrinho</ion-button>
       </div>
     </form>
   </ion-content>

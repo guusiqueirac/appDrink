@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Perfil</ion-title>
+  <ion-toolbar color="black" >
+    <ion-title selfie color="mostarda"> Perfil </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,6 +13,8 @@
           <ion-label>{{user.email}}</ion-label>
         </ion-item>
       </ion-list>
-      <ion-button expand="block" fill="outline" [routerLink]="['/usuarios/enderecos']">Meus Endereços</ion-button>     
-      <ion-button expand="block" color="danger" (click)="sair()">Sair</ion-button>
+      <div class="botao" no-shadow>
+        <ion-button expand="block" fill="outline" color="mostarda" [routerLink]="['/usuarios/enderecos']">Meus Endereços</ion-button>     
+        <ion-button expand="block" fill="outline" color="danger" (click)="sair()">Sair</ion-button>
+    </div>
 </ion-content>

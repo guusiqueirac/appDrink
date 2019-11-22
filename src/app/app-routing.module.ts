@@ -12,9 +12,11 @@ const routes: Routes = [
   { path: 'esqueci-senha', loadChildren: './usuarios/esqueci-senha/esqueci-senha.module#EsqueciSenhaPageModule' },
   { path: 'item-produto', loadChildren: './produtos/item-produto/item-produto.module#ItemProdutoPageModule' },
   { path: 'item-carrinho', loadChildren: './pedido/item-carrinho/item-carrinho.module#ItemCarrinhoPageModule' },
-  { path: 'sobre', loadChildren: './sobre/sobre/sobre.module#SobrePageModule' },
+  { path: 'form-enderecos', loadChildren: './enderecos/form-enderecos/form-enderecos.module#FormEnderecosPageModule' },
+  { path: 'lista-enderecos', loadChildren: './enderecos/lista-enderecos/lista-enderecos.module#ListaEnderecosPageModule' }
 
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

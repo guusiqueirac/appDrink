@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="black" >
+    <ion-title selfie color="mostarda"> appDrink </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="medium">
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+    <ion-title> Novo Endereço</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!--Campos de input de dados para adicionar um novo endereço-->
+<ion-content padding>
+  <form [formGroup]="formEndereco" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">CEP</ion-label>
+      <ion-input type="number" formControlName="cep"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Logradouro</ion-label>
+      <ion-input type="text" formControlName="logradouro"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Número</ion-label>
+      <ion-input type="text" formControlName="numero"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Complemento</ion-label>
+      <ion-input type="text" formControlName="complemento"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Bairro</ion-label>
+      <ion-input type="text" formControlName="bairro"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cidade</ion-label>
+      <ion-input type="text" formControlName="cidade"></ion-input>
+    </ion-item>
+
+    <!-- Opção de escolher o estado por select -->
+    <!-- <ion-item>
+      <ion-label >Estado</ion-label>
+      <ion-select type="text" formControlName="estado">
+        <ion-select-option value="ac">AC</ion-select-option>
+        <ion-select-option value="sp">SP</ion-select-option>
+      </ion-select>
+    </ion-item> -->
+
+    <div margin-vertical>
+      <ion-button expand="block" color="mostarda" type="submit">Salvar</ion-button>
+    </div> 
+  </form>
+</ion-content>

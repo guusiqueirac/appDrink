@@ -3,25 +3,27 @@
       <ion-title selfie color="mostarda"> appDrink </ion-title>
     </ion-toolbar>
     <ion-toolbar color="medium">
-      <ion-title> {{ categorias }} </ion-title>
+      <ion-title> {{ categoria }} </ion-title>
     </ion-toolbar>
   </ion-header>
 
 <ion-content>
-  <ion-list >
-    <ion-item *ngFor="let p of produtos | async" (click)="adicionarProduto(p.key)">
-        <ion-thumbnail slot="start" *ngIf="p.img">
-          <img [src]="p.img" />
+    <ion-searchbar  [(ngModel)]="bebida" type="text" (keypress)="getProprietario()" placeholder="Pesquisar"></ion-searchbar>
+
+    <ion-list >
+    <ion-item *ngFor="let produto of produtos | async" (click)="adicionarProduto(p.key)">
+        <ion-thumbnail slot="start" *ngIf="produto.img">
+          <img [src]="produto.img" />
         </ion-thumbnail>
         <ion-label text-wrap>
-          <h1>{{ p.nome }}</h1>
+          <h1>{{ produto.nome }}</h1>
           <br>
           <!-- <h2>{{ p.categoriaNome }}</h2> -->
           <!-- <pre text-wrap>{{ p.descricao }}</pre> -->
           <!-- <span>{{produto.preco | currency: 'BRL'}}</span> -->
-          <p class="valor"><app-valor [valor]="p.preco"></app-valor></p>
+          <p class="valor"><app-valor [valor]="produto.preco"></app-valor></p>
         </ion-label>
       </ion-item>
-    </ion-list>
+  </ion-list>
 
 </ion-content>

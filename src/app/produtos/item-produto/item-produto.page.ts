@@ -97,7 +97,7 @@ export class ItemProdutoPage implements OnInit {
       this.carrinhoService.insert(this.form.value)
       .then( () => {
         this.toast.show('Produto adicionado ao carrinho com sucesso !');
-        this.router.navigate(['/tabs/produtos']);
+        this.router.navigate(['/tabs/categoria']);
       })
     }
   }

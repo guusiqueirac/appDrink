@@ -16,6 +16,7 @@ export class ListaProdutosPage implements OnInit {
   carrinhoPossuiItens: boolean = false;
   categoria: string;
   key: string;
+  bebida: string;
 
   constructor(private router: Router,
               private produtosService: ProdutoService,
@@ -34,13 +35,17 @@ export class ListaProdutosPage implements OnInit {
     }
   }
 
-    /*Buscar produto de uma categoria através de uma key*/
-    buscarProdutos() {
-       this.produtos = this.produtosService.getAll(this.categoriaSelecionada);
-     }
-
-     adicionarProduto(key: string){
-      this.router.navigate(['produtos/item-produto/', key]);
+  /*Buscar produto de uma categoria através de uma key*/
+  buscarProdutos() {
+      this.produtos = this.produtosService.getAll(this.categoriaSelecionada);
     }
+
+    adicionarProduto(key: string){
+    this.router.navigate(['produtos/item-produto/', key]);
+  }
+
+  getProprietario() {
+    this.produtos = this.produtosService.getByCustomers(this.bebida);
+  }
 
 }

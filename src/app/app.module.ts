@@ -23,7 +23,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    AngularFireDatabaseModule,
+    AngularFireDatabaseModule
   ],
   providers: [
     StatusBar,

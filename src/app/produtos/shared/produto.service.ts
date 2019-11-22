@@ -48,5 +48,14 @@ export class ProdutoService {
     );
   }
 
+  getByCustomers(bebida: string) {
+    return this.db.list(FirebasePath.CLIENTES, q => q.orderByChild('name').startAt(bebida).endAt(bebida+'\uf88f'))
+      .snapshotChanges().pipe(
+        map(changes => {
+          return changes.map(m => ({ key: m.payload.key, ...m.payload.val() }))
+        })
+      )
+  }
+
 
 }
