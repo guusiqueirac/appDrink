@@ -1,6 +1,6 @@
 import { CategoriaService } from 'src/app/categorias/shared/categoria.service';
 import { ProdutoService } from './../shared/produto.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
   templateUrl: './lista-produtos.page.html',
   styleUrls: ['./lista-produtos.page.scss'],
 })
+
 export class ListaProdutosPage implements OnInit {
   produtos: Observable<any[]>;
   categorias: Observable<any[]>;
@@ -17,11 +18,13 @@ export class ListaProdutosPage implements OnInit {
   categoria: string;
   key: string;
   bebida: string;
+  filtroSelecionado: string;
 
   constructor(private router: Router,
               private produtosService: ProdutoService,
               private categoriaService: CategoriaService,
               private route: ActivatedRoute ) { }
+
 
   ngOnInit() {
     // this.produtos = this.produtosService.getAll(null);
@@ -37,15 +40,15 @@ export class ListaProdutosPage implements OnInit {
 
   /*Buscar produto de uma categoria através de uma key*/
   buscarProdutos() {
-      this.produtos = this.produtosService.getAll(this.categoriaSelecionada);
+      this.produtos = this.produtosService.getAll(this.filtroSelecionado);
     }
 
     adicionarProduto(key: string){
     this.router.navigate(['produtos/item-produto/', key]);
   }
 
-  getProprietario() {
-    this.produtos = this.produtosService.getByCustomers(this.bebida);
-  }
+  // getBebida() {
+  //   this.produtos = this.produtosService.getByCustomers(this.bebida);
+  // }
 
 }

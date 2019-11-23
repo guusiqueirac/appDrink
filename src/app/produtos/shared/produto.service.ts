@@ -26,7 +26,7 @@ export class ProdutoService {
     )
   }
 
-  getByCategoria(key: string){
+  getByCategoria(key: string) {
     /*Contrução do path, o $ serve para concatenar as variaveis com constante*/
     return this.db.list ( FirebasePath.PRODUTOS, q => {
       if (key) {
@@ -38,7 +38,7 @@ export class ProdutoService {
       })
     )
   }
-  getProduto(key: string){
+  getProduto(key: string) {
     /*Contrução do path, o $ serve para concatenar as variaveis com constante*/
     const path = `${FirebasePath.PRODUTOS}${key}`;
     return this.db.object(path).snapshotChanges().pipe(
@@ -48,14 +48,13 @@ export class ProdutoService {
     );
   }
 
-  getByCustomers(bebida: string) {
-    return this.db.list(FirebasePath.CLIENTES, q => q.orderByChild('name').startAt(bebida).endAt(bebida+'\uf88f'))
-      .snapshotChanges().pipe(
-        map(changes => {
-          return changes.map(m => ({ key: m.payload.key, ...m.payload.val() }))
-        })
-      )
-  }
-
+  // getByCustomers(bebida: string) {
+  //   return this.db.list(FirebasePath.PRODUTOS, q => q.orderByChild('nome').startAt(bebida).endAt(bebida+'\uf88f'))
+  //     .snapshotChanges().pipe(
+  //       map(changes => {
+  //         return changes.map(m => ({ key: m.payload.key, ...m.payload.val() }))
+  //       })
+  //     )
+  // }
 
 }

@@ -2,16 +2,25 @@
     <ion-toolbar color="black" >
       <ion-title selfie color="mostarda"> appDrink </ion-title>
     </ion-toolbar>
-    <ion-toolbar color="medium">
-      <ion-title> {{ categoria }} </ion-title>
+    <ion-toolbar color="mostarda">
+        <ion-buttons slot="start">
+            <ion-back-button placeholder="A"></ion-back-button>
+        </ion-buttons>
+      <ion-title color="black"> {{ categorias }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
 <ion-content>
-    <ion-searchbar  [(ngModel)]="bebida" type="text" (keypress)="getProprietario()" placeholder="Pesquisar"></ion-searchbar>
+    <!-- <ion-searchbar [(ngModel)]="bebida" type="text"  (keypress)="getBebida()" placeholder="Pesquise sua bebida aqui"></ion-searchbar>  -->
+    <ion-label>Filtro</ion-label>
+      <ion-select (ionChange)="buscarProdutos()" [(ngModel)]="filtroSelecionado">
+        <ion-select-option value="" [selected]="true">Todas</ion-select-option>
+        <ion-select-option *ngFor="let produto of produtos | async" [value]="produto.key">{{ produto.preco }}
+        </ion-select-option>
+      </ion-select>
 
     <ion-list >
-    <ion-item *ngFor="let produto of produtos | async" (click)="adicionarProduto(p.key)">
+    <ion-item *ngFor="let produto of produtos | async" (click)="adicionarProduto(produto.key)">
         <ion-thumbnail slot="start" *ngIf="produto.img">
           <img [src]="produto.img" />
         </ion-thumbnail>

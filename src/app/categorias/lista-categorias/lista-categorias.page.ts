@@ -1,3 +1,4 @@
+import { ProdutoService } from './../../produtos/shared/produto.service';
 import { CategoriaService } from './../shared/categoria.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -14,6 +15,7 @@ export class ListaCategoriasPage implements OnInit {
   produtos: Observable<any[]>;
   categoriaSelecionada: string;
   carrinhoPossuiItens: boolean = false;
+  bebida: string;
 
   constructor(private router: Router,
               private categoriaService: CategoriaService,
@@ -24,9 +26,9 @@ export class ListaCategoriasPage implements OnInit {
     this.categorias = this.categoriaService.getcategoriasAll(null);
     /*Ele vai no ouvir(subscribe) se existe algum produto no carrinho,
     se não houver, a variavel "existemItens" será sempre falsa, então ao abrir a page não mostrará o carrinho*/
-    // this.carrinhoService.carrinhoPossuiItens().subscribe( (existemItens: boolean) => {
-    //   this.carrinhoPossuiItens = existemItens;
-    // })
+    this.carrinhoService.carrinhoPossuiItens().subscribe( (existemItens: boolean) => {
+      this.carrinhoPossuiItens = existemItens;
+    })
   }
 
   getProduto(categoriaKey: string){

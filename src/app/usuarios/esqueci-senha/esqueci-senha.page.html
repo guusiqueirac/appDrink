@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="black">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Esqueci minha senha</ion-title>
+    <ion-title color="mostarda">Esqueci minha senha</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,11 +11,11 @@
   <form [formGroup]="formEsqueciSenha" (ngSubmit)="onSubmit()">
     <ion-item>
       <ion-label position="stacked">E-mail</ion-label>
-      <ion-input type="email" formControlName="email"></ion-input>
+      <ion-input type="email" formControlName="email" style="border-radius: 80%"></ion-input>
     </ion-item>
 
     <div padding>
-      <ion-button color="primary" expand="block" type="submit">Resetar minha senha</ion-button>
+      <ion-button color="mostarda" expand="block" type="submit">Resetar minha senha</ion-button>
     </div>
   </form>
 </ion-content>
