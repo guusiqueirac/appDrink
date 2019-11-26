@@ -12,12 +12,12 @@
 
 <ion-content>
     <!-- <ion-searchbar [(ngModel)]="bebida" type="text"  (keypress)="getBebida()" placeholder="Pesquise sua bebida aqui"></ion-searchbar>  -->
-    <ion-label>Filtro</ion-label>
-      <ion-select (ionChange)="buscarProdutos()" [(ngModel)]="filtroSelecionado">
+     <!-- <ion-label>Filtro</ion-label>
+       <ion-select (ionChange)="buscarProdutos()" [(ngModel)]="filtroSelecionado">
         <ion-select-option value="" [selected]="true">Todas</ion-select-option>
         <ion-select-option *ngFor="let produto of produtos | async" [value]="produto.key">{{ produto.preco }}
         </ion-select-option>
-      </ion-select>
+      </ion-select> -->
 
     <ion-list >
     <ion-item *ngFor="let produto of produtos | async" (click)="adicionarProduto(produto.key)">

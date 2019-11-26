@@ -70,17 +70,26 @@ const routes: Routes = [
         path: 'item-produto/:key',
         loadChildren: '../produtos/item-produto/item-produto.module#ItemProdutoPageModule'
       }
-      ]
-    },
-    {
-      path: 'sobre',
-      children: [
-        {
-          path: '',
-          loadChildren: '../sobre/sobre/sobre.module#SobrePageModule'
-        }
-      ]
-    },
+    ]
+  },
+  {
+    path: 'pedido',
+    children: [
+      {
+        path: 'carrinho',
+        loadChildren: '../pedido/lista-itens-carrinho/lista-itens-carrinho.module#ListaItensCarrinhoPageModule'
+      }
+    ]
+  },
+  {
+    path: 'sobre',
+    children: [
+      {
+        path: '',
+        loadChildren: '../sobre/sobre/sobre.module#SobrePageModule'
+      }
+    ]
+  },
   {
     path: '',
     redirectTo: '/tabs/categoria',

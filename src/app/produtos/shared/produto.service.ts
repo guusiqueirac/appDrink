@@ -38,6 +38,7 @@ export class ProdutoService {
       })
     )
   }
+  
   getProduto(key: string) {
     /*Contrução do path, o $ serve para concatenar as variaveis com constante*/
     const path = `${FirebasePath.PRODUTOS}${key}`;
