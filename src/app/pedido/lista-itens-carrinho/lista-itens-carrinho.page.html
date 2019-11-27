@@ -3,6 +3,9 @@
       <ion-title selfie color="mostarda"> appDrink </ion-title>
     </ion-toolbar>
     <ion-toolbar color="mostarda">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
       <ion-title color="black"> Carrinho</ion-title>
     </ion-toolbar>
 </ion-header>
@@ -10,9 +13,9 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let item of itensPedido | async">
-      <!-- <ion-thumbnail slot="start" *ngIf="item.img"> -->
+      <ion-thumbnail slot="start" *ngIf="item.img">
         <img [src]="item.img" />
-      <!-- </ion-thumbnail> -->
+      </ion-thumbnail>
     <ion-label text-wrap>
       <h1>{{ item.produtoNome }}</h1>
       <pre *ngIf="item.produtoDescricao" text-wrap>{{ item.produtoDescricao }}</pre>
@@ -47,7 +50,7 @@
     <app-valor [valor]="total"></app-valor>
   </p>
 
-  <ion-button expand="full" color="mostarda" [routerLink]="['/pedido/forma-pagamento']">
+  <ion-button expand="full" color="mostarda" [routerLink]="['/pedido/form-pagamento']">
     Forma de pagamento
     <ion-icon slot="end" name="arrow-forward"></ion-icon>
   </ion-button>

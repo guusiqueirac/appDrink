@@ -41,7 +41,8 @@ export class ItemProdutoPage implements OnInit {
           produtoNome: produto.nome,
           produtoDescricao: produto.descricao,
           produtoPreco: produto.preco,
-          quantidade: 1
+          quantidade: 1,
+          img: produto.img
         });
 
         /*Mostra o total calculado*/
@@ -59,7 +60,8 @@ export class ItemProdutoPage implements OnInit {
       produtoPreco: [''],
       quantidade: [''],
       observacao: [''],
-      total: ['']
+      total: [''],
+      img: ['']
     })
   }
 

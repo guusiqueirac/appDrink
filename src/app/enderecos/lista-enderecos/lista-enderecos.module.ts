@@ -20,6 +20,6 @@ const routes: Routes = [
     SharedModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ListaEnderecosPage]
+  declarations: []
 })
 export class ListaEnderecosPageModule {}

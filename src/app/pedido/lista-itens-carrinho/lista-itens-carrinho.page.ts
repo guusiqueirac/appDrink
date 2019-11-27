@@ -19,6 +19,7 @@ export class ListaItensCarrinhoPage implements OnInit {
  ngOnInit() {
   /*Traz todos os itens no carrinho com seus dados*/
   this.itensPedido = this.carrinhoService.getAll();
+
   /*Busca do metodo getTotalPedio o total de todos os produtos que estão no carrinho e mostra*/
   this.getTotalPedido();
 }

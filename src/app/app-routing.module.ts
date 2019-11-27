@@ -14,7 +14,6 @@ const routes: Routes = [
   { path: 'form-enderecos', loadChildren: './enderecos/form-enderecos/form-enderecos.module#FormEnderecosPageModule' },
   { path: 'lista-enderecos', loadChildren: './enderecos/lista-enderecos/lista-enderecos.module#ListaEnderecosPageModule' },
   { path: 'lista-itens-carrinho', loadChildren: './pedido/lista-itens-carrinho/lista-itens-carrinho.module#ListaItensCarrinhoPageModule' }
-
 ];
 
 @NgModule({
