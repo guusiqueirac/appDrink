@@ -15,6 +15,12 @@ export class PedidoService {
     CARTAO: 2
   };
 
+  public static TIPO_FORMA_ENTREGA = {
+    ENTREGA: 1,
+    AGENDAR: 2,
+    RETIRAR: 3
+  };
+
   public static STATUS = {
     ENVIADO: 0,
     CONFIRMADO: 1,

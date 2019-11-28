@@ -23,6 +23,12 @@ export class FormPagamentoPage implements OnInit {
     {valor: PedidoService.TIPO_FORMA_PAGAMENTO.DINHEIRO, descricao: 'Dinheiro'},
     {valor: PedidoService.TIPO_FORMA_PAGAMENTO.CARTAO, descricao: 'Cartão de crédito/débito'}
   ];
+  formasEntrega: Array<any> = [
+    {valor: PedidoService.TIPO_FORMA_ENTREGA.ENTREGA, descricao: 'Entregar agora'},
+    {valor: PedidoService.TIPO_FORMA_ENTREGA.AGENDAR, descricao: 'Agendar entrega'},
+    {valor: PedidoService.TIPO_FORMA_ENTREGA.RETIRAR, descricao: 'Retirar pedido'}
+  ];
+
   enderecoSelecionado: string = this.MENSAGEM_ENDERECO_VAZIO;
 
   constructor(private formBuilder: FormBuilder,
@@ -41,11 +47,13 @@ export class FormPagamentoPage implements OnInit {
       this.form.patchValue ({ total: total });
     })
   }
+
   criarFormulario() {
     this.form = this.formBuilder.group ({
       formPagamento: [''],
       trocoPara: [''],
       tipoCartao: [''],
+      formEntrega: [''],
       enderecoEntrega: [''],
       total: ['']
     })
