@@ -15,20 +15,19 @@
       <ion-list>
         <!-- Grupo forma de pagamento -->
         <ion-item-group>
-          <ion-item-divider color="light">
-            <ion-label>
-              Forma de Pagamento
-            </ion-label>
-          </ion-item-divider>
-          <ion-item>
-            <ion-label>Forma de pagamento</ion-label>
-            <ion-select formControlName="formPagamento">
-              <ion-select-option value="" [selected]="true">- Escolha -</ion-select-option>
-              <ion-select-option *ngFor="let formPagamento of formasPagamento" [value]="formPagamento.valor">
-                {{ formPagamento.descricao }}
-              </ion-select-option>
-            </ion-select>
-          </ion-item>
+            <ion-item-divider color="light">
+              <ion-label>
+                Forma de Pagamento
+              </ion-label>
+            </ion-item-divider>
+            <ion-item>
+              <ion-label>Qual sua forma de pagamento ?</ion-label>
+              <ion-select formControlName="formPagamento">
+                <ion-select-option value="" [selected]="true">Opções</ion-select-option>
+                <ion-select-option *ngFor="let formPagamento of formasPagamento" [value]="formPagamento.valor">{{
+                  formPagamento.descricao }}</ion-select-option>
+              </ion-select>
+            </ion-item>
   
           <!-- se for dinheiro -->
           <ion-item *ngIf="form.value.formPagamento == 1">
@@ -53,15 +52,20 @@
         <ion-item-group>
             <ion-item-divider color="light">
                 <ion-label>
-                  Endereço de entrega
+                  Forma de Entrega
                 </ion-label>
-                <ion-select formControlName="formEntrega">
-                    <ion-select-option value="" [selected]="true">- Escolha -</ion-select-option>
-                    <ion-select-option *ngFor="let formEntrega of formasEntrega" [value]="formEntrega.valor">
-                      {{ formEntrega.descricao }}
-                    </ion-select-option>
-                  </ion-select>
               </ion-item-divider>
+              <ion-item>
+                <ion-label>Como deseja receber seu pedido ?</ion-label>
+                <ion-select formControlName="formEntrega">
+                  <ion-select-option slot="end" value="" [selected]="true"><b>Opções</b></ion-select-option>
+                  <ion-select-option *ngFor="let formEntrega of formasEntrega" [value]="formEntrega.valor">
+                    {{ formEntrega.descricao }}
+                  </ion-select-option>
+                </ion-select>
+              </ion-item>
+          
+              
 
           <ion-item *ngIf="form.value.formEntrega == 1">
             <ion-label>
@@ -76,6 +80,44 @@
                 </ion-row>
               </ion-grid>
             </ion-label>
+          </ion-item>
+
+          <ion-item *ngIf="form.value.formEntrega == 2">
+            <ion-row>
+            <ion-item>
+              <ion-label>Escolha uma data:</ion-label>
+              <ion-datetime displayFormat="DD/MM/YYYY" min="2019-11-28" max="2020-12-31" value="1990-02-19" placeholder="Selecionar Data"></ion-datetime>
+            </ion-item>
+          </ion-row>
+          <ion-row>
+            <br>
+            <ion-item>
+                <ion-label>Escolha a Hora:</ion-label>
+                <ion-datetime displayFormat="mm:hh A" picker-format="mm:hh A" minuteValues="0,15,30,45"></ion-datetime>
+              </ion-item>
+            </ion-row>
+          </ion-item>
+
+          <ion-item *ngIf="form.value.formEntrega == 3">
+            <ion-card>
+              <ion-card-title><h3 class="center"><b>Distribuidor</b></h3></ion-card-title>
+              <ion-card-content>
+                <ion-row>
+                  <ion-col size="4"><b><ion-icon name="pin"></ion-icon> Endereço:</b></ion-col>
+                  <ion-col size="8"><u> Av. Brasil 1200 - Jd. Guanabara</u></ion-col>
+                  <ion-col size="5"></ion-col><ion-col size="7"><u>Campinas - SP - Brasil</u></ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col size="3"><b><ion-icon name="done-all"></ion-icon> Aberto:</b></ion-col>
+                  <ion-col size="9"> Terça à Quinta - 10:00 ás 21:00 hrs</ion-col>
+                  <ion-col size="3"></ion-col><ion-col size="9"> Sexta à Domingo - 10:00 ás 00:00 hrs</ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col size="4"><ion-icon name="call"></ion-icon><b> Contato:</b></ion-col>
+                  <ion-col size="8">(19)3225-8990</ion-col>
+                </ion-row>
+              </ion-card-content>
+            </ion-card>
           </ion-item>
         </ion-item-group>
   

@@ -17,7 +17,6 @@ export class ItemProdutoPage implements OnInit {
   /*variável para receber a imagem*/
   produtoImg: string;
 
-
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
               private router: Router,
@@ -103,7 +102,5 @@ export class ItemProdutoPage implements OnInit {
       })
     }
   }
-
-
 
 }
