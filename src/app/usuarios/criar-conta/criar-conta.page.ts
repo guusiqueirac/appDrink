@@ -24,12 +24,16 @@ export class CriarContaPage implements OnInit {
   get nome() { return this.formCriarConta.get('nome'); }
   get email() { return this.formCriarConta.get('email'); }
   get senha() { return this.formCriarConta.get('senha'); }
+  get telefone() { return this.formCriarConta.get('telefone'); }
+  get cpf() { return this.formCriarConta.get('cpf'); }
 
   criarFormulario() {
     this.formCriarConta = this.formBuilder.group({
-      nome: ['', [Validators.required,Validators.minLength(5)]],
+      nome: ['', [Validators.required, Validators.minLength(5)]],
       email: ['', [Validators.required, Validators.email]],
-      senha: ['', Validators.required]
+      senha: ['', Validators.required],
+      telefone: [''],
+      cpf: ['', [Validators.required, Validators.minLength(11)]]
     });
   }
 

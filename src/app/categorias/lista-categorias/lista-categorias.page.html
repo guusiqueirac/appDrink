@@ -11,19 +11,19 @@
 <ion-content padding>
 
 <ion-grid>
-  <ion-row>
-    <ion-item no-list *ngFor="let categoria of categorias | async" (click)="getProduto(categoria.key)">
-      <ion-col size-md="4">
-        <div>
-        <h3>{{categoria.nome}}</h3>
-          <ion-avatar class="">
-            <ion-img [src]="categoria.img"></ion-img>
-          </ion-avatar> 
-        </div> 
-      </ion-col>
-    </ion-item>
-  </ion-row>
-</ion-grid>
+    <ion-row align-items-center>
+      <ion-item no-list *ngFor="let categoria of categorias | async" (click)="getProduto(categoria.key)">
+        <ion-col size-sm="2" size-md="4">
+          <div>
+          <h3>{{categoria.nome}}</h3>
+            <ion-avatar class="">
+              <ion-img [src]="categoria.img"></ion-img>
+            </ion-avatar> 
+          </div> 
+        </ion-col>
+      </ion-item>
+    </ion-row>
+  </ion-grid>
 
 <!--Lógica para perguntar se tem item ou não, se tiver aparecerá o carrinho -->  
 <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="carrinhoPossuiItens">

@@ -17,8 +17,7 @@ export class PedidoService {
 
   public static TIPO_FORMA_ENTREGA = {
     ENTREGA: 1,
-    AGENDAR: 2,
-    RETIRAR: 3
+    RETIRAR: 2
   };
 
   public static STATUS = {

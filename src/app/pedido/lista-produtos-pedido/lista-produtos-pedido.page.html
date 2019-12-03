@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-toolbar color="black" >
+      <ion-title selfie color="mostarda"> appDrink </ion-title>
+    </ion-toolbar>
+    <ion-toolbar color="mostarda">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+      <ion-title color="black"> Produtos do Pedido</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-list>
+      <ion-item *ngFor="let produto of produtos | async">
+        <ion-label>
+  
+          <ion-grid>
+            <ion-row>
+              <ion-col size="9" text-wrap>
+                {{ produto.produtoNome }}
+              </ion-col>
+              <ion-col size="3" text-right>{{ produto.quantidade }}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col><app-valor [valor]="produto.total"></app-valor></ion-col>
+            </ion-row>
+          </ion-grid>
+  
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  

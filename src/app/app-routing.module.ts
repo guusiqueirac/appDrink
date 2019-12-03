@@ -13,7 +13,9 @@ const routes: Routes = [
   { path: 'item-produto', loadChildren: './produtos/item-produto/item-produto.module#ItemProdutoPageModule' },
   { path: 'form-enderecos', loadChildren: './enderecos/form-enderecos/form-enderecos.module#FormEnderecosPageModule' },
   { path: 'lista-enderecos', loadChildren: './enderecos/lista-enderecos/lista-enderecos.module#ListaEnderecosPageModule' },
-  { path: 'lista-itens-carrinho', loadChildren: './pedido/lista-itens-carrinho/lista-itens-carrinho.module#ListaItensCarrinhoPageModule' }
+  { path: 'lista-itens-carrinho', loadChildren: './pedido/lista-itens-carrinho/lista-itens-carrinho.module#ListaItensCarrinhoPageModule' },
+  { path: 'lista-pedido', loadChildren: './pedido/lista-pedido/lista-pedido.module#ListaPedidoPageModule' },
+  { path: 'lista-produtos-pedido', loadChildren: './pedido/lista-produtos-pedido/lista-produtos-pedido.module#ListaProdutosPedidoPageModule' }
 ];
 
 @NgModule({

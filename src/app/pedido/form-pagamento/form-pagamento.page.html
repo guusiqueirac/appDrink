@@ -83,22 +83,6 @@
           </ion-item>
 
           <ion-item *ngIf="form.value.formEntrega == 2">
-            <ion-row>
-            <ion-item>
-              <ion-label>Escolha uma data:</ion-label>
-              <ion-datetime displayFormat="DD/MM/YYYY" min="2019-11-28" max="2020-12-31" value="1990-02-19" placeholder="Selecionar Data"></ion-datetime>
-            </ion-item>
-          </ion-row>
-          <ion-row>
-            <br>
-            <ion-item>
-                <ion-label>Escolha a Hora:</ion-label>
-                <ion-datetime displayFormat="mm:hh A" picker-format="mm:hh A" minuteValues="0,15,30,45"></ion-datetime>
-              </ion-item>
-            </ion-row>
-          </ion-item>
-
-          <ion-item *ngIf="form.value.formEntrega == 3">
             <ion-card>
               <ion-card-title><h3 class="center"><b>Distribuidor</b></h3></ion-card-title>
               <ion-card-content>
@@ -147,18 +131,21 @@
         </ion-item>
       </ion-item-group>
     </ion-list>
+  
+
+    <ion-footer>
+      <p padding-horizontal text-right>
+        <b>Total do pedido: </b>
+        <app-valor [valor]="total"></app-valor>
+      </p>
+    
+      <ion-button expand="full" color="mostarda" type="submit">
+        Realizar pedido
+        <ion-icon slot="end" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-footer>
   </form>
 </ion-content>
 
-<ion-footer>
-  <p padding-horizontal text-right>
-    <b>Total do pedido: </b>
-    <app-valor [valor]="total"></app-valor>
-  </p>
 
-  <ion-button expand="full" color="mostarda" type="submit">
-    Realizar pedido
-    <ion-icon slot="end" name="arrow-forward"></ion-icon>
-  </ion-button>
-</ion-footer>
   

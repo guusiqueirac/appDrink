@@ -25,7 +25,6 @@ export class FormPagamentoPage implements OnInit {
   ];
   formasEntrega: Array<any> = [
     {valor: PedidoService.TIPO_FORMA_ENTREGA.ENTREGA, descricao: 'Entregar agora'},
-    {valor: PedidoService.TIPO_FORMA_ENTREGA.AGENDAR, descricao: 'Agendar entrega'},
     {valor: PedidoService.TIPO_FORMA_ENTREGA.RETIRAR, descricao: 'Retirar pedido'}
   ];
 
