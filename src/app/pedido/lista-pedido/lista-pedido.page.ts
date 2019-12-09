@@ -8,6 +8,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./lista-pedido.page.scss'],
 })
 export class ListaPedidoPage implements OnInit {
+  formStatus: Array<any> = [
+    {valor: PedidoService.STATUS.CONFIRMADO},
+    {valor: PedidoService.STATUS.ENTREGUE},
+    {valor: PedidoService.STATUS.ENVIADO},
+    {valor: PedidoService.STATUS.SAIU_PARA_ENTREGA},
+  ];
+  ima
 
   constructor(private pedidoService: PedidoService) { }
   pedidos: Observable<any[]>

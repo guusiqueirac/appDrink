@@ -31,10 +31,18 @@ export class ListaProdutosPage implements OnInit {
     let key = this.route.snapshot.paramMap.get('key');
 
     if (key) {
+
+      const subscribe = this.produtosService.getByCategoria(key).subscribe( (cat: any ) => {
+        subscribe.unsubscribe();
+         this.categoria = cat[0].categoriaNome;
+        console.log(cat);
+      })  
+      
+
       this.categorias = this.categoriaService.getcategoriasAll(key);
 
       this.produtos = this.produtosService.getByCategoria(key);
-      console.log(this.produtos);
+      //console.log(this.produtos);
     }
   }
 

@@ -52,6 +52,7 @@ export class PedidoService {
         observacao: produto.observacao,
         produtoPreco: produto.produtoPreco,
         quantidade: produto.quantidade,
+        img: produto.img,
         total: produto.total
           };
         });

@@ -16,26 +16,46 @@
         <ion-label>Exibir todos os pedidos</ion-label>
         <ion-checkbox color="dark" slot="end" (ionChange)="executarBusca($event)"></ion-checkbox>
       </ion-item>
-      <ion-item *ngFor="let pedido of pedidos | async" [routerLink]="['/pedido/produtos', pedido.key]">
+      <span *ngFor="let pedido of pedidos | async" [routerLink]="['/pedido/produtos', pedido.key]">
         <ion-label>
           <h1>Pedido {{ pedido.numero }}</h1>
   
           <div margin-vertical>
-            <div><b>Valor total: </b> <app-valor [valor]="pedido.total" ></app-valor></div>
+            <div><b>Valor total: </b> <app-valor [valor]="pedido.total" ></app-valor></div><br>
             <div>
               <b>{{ getFormaPagamentoNome(pedido.formPagamento) }}: </b>
               <span *ngIf="pedido.formPagamento == 1">Troco para: {{ pedido.trocoPara || 0 | currency:'BRL' }}</span>
               <span text-wrap *ngIf="pedido.formPagamento == 2">{{ pedido.tipoCartao }}</span>
-            </div>
+            </div><br>
             <div>
               <b>Data:</b> {{ pedido.data }}
-            </div>
+            </div><br>
             <div>
-              <b>Status: {{ getStatusNome(pedido.status) }}</b>
+              <b>Status do Pedido:</b>
+              <span *ngIf="pedido.status == 0">
+                <ion-chip outline color="danger">
+                    {{ getStatusNome(pedido.status) }}
+                </ion-chip>
+              </span>
+              <span *ngIf="pedido.status == 1">
+                <ion-chip outline color="warning">
+                    {{ getStatusNome(pedido.status) }}
+                </ion-chip>
+              </span>
+              <span *ngIf="pedido.status == 2">
+                <ion-chip outline color="primary">
+                    {{ getStatusNome(pedido.status) }}
+                </ion-chip>
+              </span>
+              <span *ngIf="pedido.status == 3">
+                <ion-chip outline color="success">
+                    {{ getStatusNome(pedido.status) }}
+                </ion-chip>
+              </span>
             </div>
           </div>
         </ion-label>
-      </ion-item>
+      </span>
       
     </ion-list>
   </ion-content>

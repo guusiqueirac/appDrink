@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar color="black" >
-        <ion-title selfie color="mostarda"> appDrink </ion-title>
+        <ion-title class="titulo"lfie color="mostarda"> appDrink </ion-title>
       </ion-toolbar>
       <ion-toolbar color="mostarda">
         <ion-title color="black"> Login </ion-title>
@@ -9,19 +9,21 @@
 
 <ion-content padding color="black">
   <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
-    <ion-item>
-      <ion-label position="stacked" color="mostarda">E-mail</ion-label>
-      <ion-input class="caixa" type="email" formControlName="email"></ion-input>
-    </ion-item>
-    <br><br>
-    <ion-item>
-      <ion-label position="stacked" color="mostarda">Senha</ion-label>
-      <ion-input class="caixa" type="password" formControlName="senha"></ion-input>
-    </ion-item>
+    <div id="container">
+        <ion-item>
+          <ion-label position="stacked" color="black">E-mail</ion-label>
+          <ion-input class="caixa" type="email" formControlName="email"></ion-input>
+        </ion-item>
+        <br><br>
+        <ion-item>
+          <ion-label position="stacked" color="black">Senha</ion-label>
+          <ion-input class="caixa" type="password" formControlName="senha"></ion-input>
+        </ion-item>
 
-    <div margin-vertical>
-      <ion-button color="mostarda" expand="block" type="submit">Entrar</ion-button>
-    </div>
+        <div margin-vertical>
+          <ion-button color="mostarda" expand="block" type="submit">Entrar</ion-button>
+        </div>
+    </div>    
   </form>
 
   <ion-button expand="block" color="mostarda" fill="clear" margin-top [routerLink]="['/esqueci-senha']">Esqueci minha senha</ion-button>

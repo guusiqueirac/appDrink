@@ -58,7 +58,7 @@ export class UsuariosService {
 
   getDadosUsuarios(){
     const user = {name: '', email: ''};
-    if (this.afAuth.auth.currentUser){
+    if (this.afAuth.auth.currentUser) {
       user.name = this.afAuth.auth.currentUser.displayName;
       user.email = this.afAuth.auth.currentUser.email;
     }

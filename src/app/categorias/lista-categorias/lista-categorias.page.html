@@ -8,20 +8,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content no-list padding>
 
-<ion-grid>
-    <ion-row align-items-center>
-      <ion-item no-list *ngFor="let categoria of categorias | async" (click)="getProduto(categoria.key)">
-        <ion-col size-sm="2" size-md="4">
-          <div>
+<ion-grid no-list class="ion-padding">
+    <ion-row class="align-items-center">
+        <ion-col class="ion-text-center" size="4" *ngFor="let categoria of categorias | async" (click)="getProduto(categoria.key)">
+          <div class="ajustar">
           <h3>{{categoria.nome}}</h3>
             <ion-avatar class="">
-              <ion-img [src]="categoria.img"></ion-img>
+              <ion-img class="img" [src]="categoria.img"></ion-img>
             </ion-avatar> 
           </div> 
         </ion-col>
-      </ion-item>
     </ion-row>
   </ion-grid>
 
